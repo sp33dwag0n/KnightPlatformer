@@ -3,7 +3,7 @@ extends Node
 @onready var score_label = $ScoreLabel
 @onready var message = $Message
 
-const COINS = 17
+const COINS = 18
 var score = 0
 var input = true
 

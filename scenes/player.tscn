@@ -227,7 +227,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Roll",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -295,8 +295,10 @@ script = ExtResource("1_uohra")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_t5nmt")
-animation = &"Death"
+animation = &"Roll"
 autoplay = "Idle"
+frame = 6
+frame_progress = 0.757569
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
