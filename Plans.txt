@@ -1,5 +1,3 @@
-- Fix coin message when no coins are collected
-- Get number of coins instead of manually changing constant
 - Add player rolling
 - Do something with fruits
 - Keep track of death count
