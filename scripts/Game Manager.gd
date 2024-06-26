@@ -2,7 +2,7 @@ extends Node
 
 @onready var score_label = $ScoreLabel
 @onready var message = $Message
-@onready var coins = $"../Coins"
+@onready var coins = %Coins
 
 
 var coin_count = 0

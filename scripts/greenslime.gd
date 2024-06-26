@@ -7,7 +7,6 @@ var direction = 1
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_bottom_right = $RayCastBottomRight
 @onready var ray_cast_bottom_left = $RayCastBottomLeft
-
 @onready var animated_sprite = $AnimatedSprite2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,4 +16,4 @@ func _process(delta):
 		animated_sprite.flip_h = !animated_sprite.flip_h
 	
 	position.x += direction * SPEED * delta
-	
+
