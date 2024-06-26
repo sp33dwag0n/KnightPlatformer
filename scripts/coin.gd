@@ -1,7 +1,7 @@
 extends Area2D
 
-@onready var game_manager = %"Game Manager"
+@onready var coin_manager = $".."
 
 func _on_body_entered(body):
-	game_manager.add_score()
+	coin_manager.add_score()
 	queue_free()

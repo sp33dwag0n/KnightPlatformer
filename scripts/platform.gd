@@ -1,6 +1,6 @@
 extends AnimatableBody2D
 
-@onready var player = %Player
+@onready var player = $"../../Player"
 @onready var timer = $Timer
 @onready var collision_shape = $CollisionShape2D
 
