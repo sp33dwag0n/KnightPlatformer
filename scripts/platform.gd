@@ -6,7 +6,7 @@ extends AnimatableBody2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if player.is_on_floor() and Input.is_action_just_pressed("Sneak"):
+	if global.input and player.is_on_floor() and Input.is_action_just_pressed("Sneak"):
 		remove_child(collision_shape)
 		timer.start()
 
