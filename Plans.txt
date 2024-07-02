@@ -1,4 +1,1 @@
-- Add player rolling
-- Do something with fruits
-- Keep track of death count
-- Start screen and ending screen
+- Fix Exiting game on start menu

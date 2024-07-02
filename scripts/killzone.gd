@@ -1,18 +1,19 @@
 extends Area2D
 
 @onready var timer = $Timer
+const DeathMenu = preload("res://scenes/death_menu.tscn")
 
 
 func _on_body_entered(body):
 	if global.input:
-		global.switch_input()
+		global.disable_input()
 		Engine.time_scale = 0.5
 		body.get_node("AnimatedSprite2D").play("Death")
-		timer.start()
+		await get_tree().create_timer(1.0).timeout
+		body.get_node("AnimatedSprite2D").speed_scale = 0
+		
+		print("timer timeout")
+		var death_screen = DeathMenu.instantiate()
+		add_child(death_screen)
 	
-
-
-func _on_timer_timeout():
-	Engine.time_scale = 1
-	global.switch_input()
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	

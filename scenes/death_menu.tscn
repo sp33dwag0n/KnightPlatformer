@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnovn2ncukx5o"]
+
+[ext_resource type="FontFile" uid="uid://cnnfobb7ei8wu" path="res://assets/fonts/PixelOperator8.ttf" id="1_djsrv"]
+[ext_resource type="Script" path="res://scripts/death_menu.gd" id="1_m4wka"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnev0"]
+bg_color = Color(0, 0, 0, 0.25098)
+
+[node name="Death Menu" type="CanvasLayer"]
+script = ExtResource("1_m4wka")
+
+[node name="Overlay" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnev0")
+
+[node name="DeathContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="DeathContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DeathContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Rows" type="VBoxContainer" parent="DeathContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DeathContainer/PanelContainer/MarginContainer/Rows"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_djsrv")
+theme_override_font_sizes/font_size = 32
+text = "You Died!"
+
+[node name="HSeparator" type="HSeparator" parent="DeathContainer/PanelContainer/MarginContainer/Rows"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Respawn" type="Button" parent="DeathContainer/PanelContainer/MarginContainer/Rows"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_djsrv")
+theme_override_font_sizes/font_size = 24
+text = "Respawn"
+
+[node name="Quit" type="Button" parent="DeathContainer/PanelContainer/MarginContainer/Rows"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_djsrv")
+theme_override_font_sizes/font_size = 24
+text = "Quit
+"
+
+[connection signal="button_down" from="DeathContainer/PanelContainer/MarginContainer/Rows/Respawn" to="." method="_on_respawn_button_down"]
+[connection signal="button_down" from="DeathContainer/PanelContainer/MarginContainer/Rows/Quit" to="." method="_on_quit_button_down"]
