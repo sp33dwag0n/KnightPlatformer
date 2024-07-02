@@ -27,5 +27,4 @@ theme_override_font_sizes/font_size = 24
 text = "QUIT"
 
 [connection signal="button_down" from="Camera2D/Start" to="." method="_on_start_button_down"]
-[connection signal="button_down" from="Camera2D/Quit" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="Camera2D/Quit" to="." method="_on_quit_button_down"]
