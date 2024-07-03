@@ -27,7 +27,7 @@ func _physics_process(delta):
 			velocity.x = min(velocity.x - DECELERATION * delta, 0)
 	else:
 		# Handle jump.
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Input.is_action_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			
 		if direction == 1:
